@@ -1,0 +1,393 @@
+/* Base */
+html { scroll-behavior:smooth; }  /* smooth scroll on all pages */
+body{
+  margin:0;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  color:#101828;
+  background:#f6fbfb;
+  line-height:1.8;
+  font-size:18px;
+}
+h1,h2,h3,h4{ margin:16px 0 8px; }
+h1{ font-size:40px; }
+h2{ font-size:28px; }
+h3{ font-size:22px; }
+p{ margin:12px 0; }
+a{ color:#0f766e; text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+/* Header / Nav */
+.header{
+  position:sticky; top:0; z-index:10;
+  background: linear-gradient(90deg,#0ea5a4,#0f766e);
+  box-shadow: 0 2px 10px rgba(0,0,0,.12);
+}
+/* nav */
+.navList{
+  display:flex;
+  justify-content: space-evenly;  
+  align-items:center;
+  list-style:none; margin:0; padding:14px 10px;
+  max-width:1200px; margin-left:auto; margin-right:auto;
+  gap:0;
+}
+.intro{
+    max-width:1100px; margin:0 auto; padding:16px;
+    text-align:center; font-size:20px;
+    color:#475467; line-height:1.6;
+}
+.navList li.contact { margin-left: 0; }  
+
+.navList li.contact { margin-left:auto; }     
+.navList a{
+  color:#ffffff; font-weight:700; letter-spacing:.3px;
+  padding:10px 14px; border-radius:8px;
+  transition: all .25s ease-in-out;
+}
+.navList a[aria-current="page"]{
+  background:rgba(255,255,255,.25);
+  text-decoration:none;
+}
+.navList a:hover{
+  background:#ffeb3b; color:#000; transform: translateY(-1px) scale(1.03);
+}
+
+/* Page title */
+.pageTitle{ text-align:center; margin:18px 0 10px; }
+.pageTitle a{ color:#0f172a; text-decoration:none; }
+.pageTitle a:hover{ text-decoration:underline; }
+
+/* Profile */
+.profile{
+  background:#eaf7f6;
+  border-top:1px solid #dbe7e6;
+  border-bottom:1px solid #dbe7e6;
+  border:2px solid #dbe7e6;
+  border-radius:12px;
+}
+.profileRow{
+  max-width:1100px; margin:0 auto; padding:22px 16px;
+  display:flex; align-items:center; gap:24px;
+}
+.profile figure{ margin:0; }
+.profile img{
+  width:180px; height:180px;
+  border-radius:10%;
+  object-fit:cover; display:block;
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Sections */
+.section, section{
+  max-width:1100px; margin:26px auto; padding:0 16px;
+  border:2px solid #06f9e4;
+  border-radius:12px;
+  background:#1ad1bf;
+}
+.section > h2, section > h2{
+  border-left:6px solid #0ea5a4; padding-left:10px;
+}
+
+/* Quote card */
+.quote{
+  background:#fff; border:1px solid #e5e7eb; border-left:20px solid #f59e0b;
+  padding:16px; border-radius:10px; max-width:900px;
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
+  margin:16px auto;
+  animation: bounceIn 1s ease;
+}
+.quote p{ margin:0; font-size:20px; }
+
+/* Figures */
+figure{ margin:12px 0; background:#fff; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,.08); }
+figure img, figure video{ width:100%; height:auto; display:block; }
+figcaption{ padding:8px 12px; font-size:14px; color:#475467; background:#f9fbfb; border-top:1px solid #e5e7eb; }
+
+/* Articles */
+article{
+  background:#bfb8f4;
+  border:1px solid #000307; border-left:6px solid #0ea5a4;
+  border-radius:12px; padding:16px; margin:14px 0;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+article h3{ margin:0 0 6px; font-size:20px; }
+article > p{ margin:0 0 8px; color:#475467; }
+
+/* Details */
+details{ margin-top:8px; }
+summary{ cursor:pointer; font-weight:700; color:#0f766e; }
+
+/* Daily life / hobbies card */
+.article2{
+  background: linear-gradient(135deg, #6a5acd, #9370db);
+  border: none;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+  color: #fff;
+  animation: slideIn 1.5s ease-out;
+}
+
+.hobbyCollage{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap:12px;
+  margin:16px 0 8px;
+}
+.hobbyCollage img{
+  width:100%; height:140px; object-fit:cover;
+  border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,.12);
+  transition: transform .25s ease;
+}
+.hobbyCollage img:hover{ transform: scale(1.04); }
+@media (max-width: 420px){
+  .hobbyCollage img{ height:120px; }
+}
+
+
+
+.article2 h2{ color:#ffeb3b; text-shadow:2px 2px 4px rgba(0,0,0,.4); }
+.article2 li{ margin-bottom:8px; }
+.article2 img{
+  display:block; margin:20px auto; max-width:280px;
+  border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,.2);
+}
+
+/* Animations */
+h1, h2, h3 { animation: fadeIn 2s ease-in-out; }
+@keyframes fadeIn { from { opacity:0; transform: translateY(-20px);} to{ opacity:1; transform:none;} }
+@keyframes float { 0%{transform:translateY(0);} 50%{transform:translateY(-10px);} 100%{transform:translateY(0);} }
+@keyframes bounceIn { 0%{ transform:scale(.5); opacity:0; } 60%{ transform:scale(1.1); opacity:1; } 80%{ transform:scale(.95);} 100%{ transform:scale(1);} }
+@keyframes slideIn { from{ transform:translateX(100%); opacity:0; } to{ transform:none; opacity:1; } }
+
+/* Gallery */
+.gallery{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:12px; }
+.gallery img{
+  width:180px; height:120px; object-fit:cover;
+  border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,.1);
+  transition: transform .3s;
+}
+.gallery img:hover{ transform: scale(1.05); }
+
+/* Bridge image */
+.bridge-img{
+  display:block; margin-top:12px; width:300px; height:auto;
+  border-radius:8px; box-shadow:0 6px 12px rgba(0,0,0,.15);
+  transition: transform .3s;
+}
+.bridge-img:hover{ transform: scale(1.05); }
+
+
+.btn{
+  background:#0ea5a4; color:#fff; padding:10px 16px; border:0;
+  border-radius:8px; text-decoration:none; display:inline-block;
+  transition:background .2s, transform .2s;
+}
+.btn:hover{ background:#0f766e; transform: translateY(-1px); }
+
+/* Favourite things / activities */
+.favCard {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-left: 6px solid #0ea5a4;
+  border-radius: 14px;
+  padding: 18px;
+  margin: 18px auto;
+  max-width: 1100px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+.favGrid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+}
+
+/* Image styling + simple hover animation */
+.zoomOnHover img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform .3s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+.zoomOnHover img:hover { transform: scale(1.04); }
+
+
+.extLink {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* footer (contact target) */
+.footer{
+  background:#0f766e; color:#ffffff; text-align:center; padding:16px 0;
+  font-size:14px; position:relative;
+  display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap;
+}
+.footer .icon{ width:120px; height:auto; display:block; }
+
+
+.header .navList {
+  display: flex;
+  justify-content: space-between;    
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 14px 10px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 0;
+}
+.header .navList li {
+  flex: 1 1 0;                        
+  text-align: center;
+}
+.header .navList li.contact { 
+  margin-left: 0 !important;          
+}
+.header .navList a {
+  display: block;                     
+  padding: 10px 14px;
+}
+
+
+
+/* mobile */
+/* ===== Responsive helpers ===== */
+img, video { max-width: 100%; height: auto; }   /* media never overflows */
+video.media { width: 100%; }                    /* PS5 video scales */
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ===== Tablet (≤ 1000px) ===== */
+@media (max-width: 1000px){
+  h1{ font-size: 34px; }
+  h2{ font-size: 24px; }
+  .favGrid{ grid-template-columns: 280px 1fr; }
+  .placeHero img{ height: 300px; }   /* if present */
+}
+
+/* ===== Phones (≤ 720px) ===== */
+@media (max-width: 720px){
+  /* Nav: wrap neatly into two rows if needed */
+  .header .navList{ flex-wrap: wrap; row-gap: 8px; }
+  .header .navList li{ flex: 1 1 50%; text-align:center; }
+
+  /* Title spacing */
+  .pageTitle{ margin: 14px 0 6px; }
+
+  /* Profile area: smaller avatar + tighter spacing */
+  .profileRow{ gap: 12px; padding: 16px; }
+  .profile img{ width: 100px; height: 100px; }
+
+  /* Cards & sections tighter padding */
+  .section, section{ padding: 0 12px; }
+  article, .favCard, .placeCard, .article2{ padding: 14px; }
+
+  /* “Background” mini gallery: 2 per row */
+  .gallery{ justify-content: space-between; }
+  .gallery img{ width: calc(50% - 6px); height: 100px; object-fit: cover; }
+
+  /* Bridge image goes full width */
+  .bridge-img{ width: 100%; }
+
+  /* Favourite Things/Activities: stack columns */
+  .favGrid{ grid-template-columns: 1fr; }
+  .zoomOnHover img{ height: 220px; }
+
+  /* Force the inline-sized GIF to be responsive */
+  .article2 ul img{ width: 100% !important; height: auto !important; max-width: 480px; }
+
+  /* Favourite place hero & gallery (if those classes exist) */
+  .placeHero img{ height: 240px; }
+  .placeGallery{ display: grid; grid-template-columns: 1fr; gap: 12px; }
+  .placeGallery img{ height: 220px; object-fit: cover; }
+
+  /* Footer stacks nicely */
+  .footer{ flex-direction: column; gap: 8px; padding: 14px 10px; }
+}
+
+/* ===== Small phones (≤ 420px) ===== */
+@media (max-width: 420px){
+  h1{ font-size: 28px; }
+  h2{ font-size: 22px; }
+  h3{ font-size: 18px; }
+  .zoomOnHover img{ height: 200px; }
+  .placeHero img{ height: 200px; }
+  .gallery img{ height: 90px; }
+}
+
+
+
+
+.hobbiesLayout{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;  
+  gap:24px;
+  align-items:start;
+}
+
+.hobbyCollage{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:12px;
+}
+
+
+.hobbyCollage img{
+  width:100%;
+  aspect-ratio: 4 / 3;  
+  object-fit:cover;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,.12);
+  transition: transform .25s ease;
+}
+.hobbyCollage img:hover{ transform: scale(1.04); }
+
+
+@media (min-width: 1100px){
+  .hobbyCollage{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .hobbyCollage img:nth-child(1),
+  .hobbyCollage img:nth-child(4){
+    grid-column: span 2;
+  }
+}
+
+
+.hobbyGif{
+  display:block;
+  margin:16px auto 0;
+  max-width:480px;
+  width:100%;
+  height:auto;
+  border-radius:12px;
+  box-shadow:0 6px 12px rgba(0,0,0,.2);
+}
+
+
+@media (max-width: 720px){
+  .hobbiesLayout{ grid-template-columns: 1fr; }
+  .hobbyCollage{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 420px){
+  .hobbyCollage{ grid-template-columns: 1fr; }
+}
+
+
+
+
+
+
+
+
